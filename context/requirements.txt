@@ -1,0 +1,8 @@
+ray==0.7.6
+gym==0.17.3
+opencv-python
+setproctitle
+tabulate
+requests
+psutil
+lz4
