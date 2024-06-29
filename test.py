@@ -64,7 +64,7 @@ def test_tree_():
     print(tree)
 
     print("========== load rule ==========")
-    rules = load_rules_from_file("classbench/acl1_20")
+    rules = load_rules_from_file("ruleset/acl1_20")
     for rule in rules:
         print(rule)
 

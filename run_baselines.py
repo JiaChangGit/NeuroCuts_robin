@@ -46,7 +46,7 @@ EXPRS = ["1k"]
 def run_hicuts():
     for i in EXPRS:
         print(i)
-        rules = load_rules_from_file("classbench/acl1_%s" % i)
+        rules = load_rules_from_file("ruleset/acl1_%s" % i)
         cuts = HiCuts(rules)
         cuts.train()
 
@@ -54,7 +54,7 @@ def run_hicuts():
 def run_hypercuts():
     for i in EXPRS:
         print(i)
-        rules = load_rules_from_file("classbench/acl1_%s" % i)
+        rules = load_rules_from_file("ruleset/acl1_%s" % i)
         cuts = HyperCuts(rules)
         cuts.train()
 
@@ -62,7 +62,7 @@ def run_hypercuts():
 def run_efficuts():
     for i in EXPRS:
         print(i)
-        rules = load_rules_from_file("classbench/acl1_%s" % i)
+        rules = load_rules_from_file("ruleset/acl1_%s" % i)
         cuts = EffiCuts(rules)
         cuts.train()
 
@@ -70,7 +70,7 @@ def run_efficuts():
 def run_cutsplit():
     for i in EXPRS:
         print(i)
-        rules = load_rules_from_file("classbench/acl1_%s" % i)
+        rules = load_rules_from_file("ruleset/acl1_%s" % i)
         cuts = CutSplit(rules)
         cuts.train()
 
@@ -84,7 +84,7 @@ def run_all():
             # for j in [1000, 10000, 100000]:
             print("%s Rules %s_%d" % (datetime.datetime.now(), i, j))
             for k in k_list:  #, "CutSplit"]:
-                rules = load_rules_from_file("classbench/%s_%d" % (i, j))
+                rules = load_rules_from_file("ruleset/%s_%d" % (i, j))
                 cuts = None
                 if k == "HiCuts":
                     cuts = HiCuts(rules)
@@ -114,7 +114,7 @@ def run_all_hicuts(files_type):
     cuts = HiCuts(rules)
     cuts.train()
     ###
-    
+
     """
     j_list = EXPRS
     k_list = ["HiCuts"]
@@ -123,7 +123,7 @@ def run_all_hicuts(files_type):
             # for j in [1000, 10000, 100000]:
             print("%s Rules %s_%s" % (datetime.datetime.now(), i, j))
             for k in k_list:  #, "CutSplit"]:
-                rules = load_rules_from_file("classbench/%s_%s" % (i, j))
+                rules = load_rules_from_file("ruleset/%s_%s" % (i, j))
                 cuts = None
                 if k == "HiCuts":
                     cuts = HiCuts(rules)
@@ -163,7 +163,7 @@ def run_all_hypercuts(files_type):
             # for j in [1000, 10000, 100000]:
             print("%s Rules %s_%s" % (datetime.datetime.now(), i, j))
             for k in k_list:  #, "CutSplit"]:
-                rules = load_rules_from_file("classbench/%s_%s" % (i, j))
+                rules = load_rules_from_file("ruleset/%s_%s" % (i, j))
                 cuts = None
                 if k == "HiCuts":
                     cuts = HiCuts(rules)
@@ -178,7 +178,7 @@ def run_all_hypercuts(files_type):
 
 def run_file(file_name, alg):
     k = alg
-    rules = load_rules_from_file("classbench/%s" % (file_name))
+    rules = load_rules_from_file("ruleset/%s" % (file_name))
     cuts = None
     if k == "HiCuts":
         cuts = HiCuts(rules)
@@ -209,7 +209,7 @@ def run_all_efficuts(files_type):
             # for j in [1000, 10000, 100000]:
             print("%s Rules %s_%s" % (datetime.datetime.now(), i, j))
             for k in k_list:  #, "CutSplit"]:
-                rules = load_rules_from_file("classbench/%s_%s" % (i, j))
+                rules = load_rules_from_file("ruleset/%s_%s" % (i, j))
                 cuts = None
                 if k == "HiCuts":
                     cuts = HiCuts(rules)
